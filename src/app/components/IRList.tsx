@@ -11,7 +11,7 @@ export default function IRList() {
         setLoading(true);
         fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vSLCAyPoCN6FSGSYn-GD1M0yTxnn6P1aK2MWRmY2yuC6SjvdSETonAO-b6FQN8mkddP-N0aYH4mDMH1/pub?gid=1000247367&single=true&output=csv').then(async (response) => {
             const text = await response.text();
-            const data = text.split("\n");
+            const data = text.split("\r\n");
             const reversedIrList = data.reverse();
             const uniqueIrList = Array.from(new Set(reversedIrList));
             setIrList(uniqueIrList);
@@ -23,8 +23,7 @@ export default function IRList() {
     return (
         <div className={`flex flex-col border-separate border-t-2 max-w-5xl`}>
             <div className={`font-bold text-lg m-2 text-slate-500`}>
-                Who will be there at IC for you to build IR?
-            </div>
+                Don't know who to make these approvals with 🧐? Check the list of the entities that have already registered and get your IR game ready 🔥🔥🔥🔥</div>
 
             {loading &&
                 <div className={`ml-2`}>
