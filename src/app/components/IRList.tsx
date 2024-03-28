@@ -23,7 +23,7 @@ export default function IRList() {
     return (
         <div className={`flex flex-col border-separate border-t-2 max-w-5xl`}>
             <div className={`font-bold text-lg m-2 text-slate-500`}>
-                Don't know who to make these approvals with 🧐? Check the list of the entities that have already registered and get your IR game ready 🔥🔥🔥🔥</div>
+                Don&apos;t know who to make these approvals with 🧐? Check the list of the entities that have already registered and get your IR game ready 🔥🔥🔥🔥</div>
 
             {loading &&
                 <div className={`ml-2`}>
