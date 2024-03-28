@@ -68,7 +68,7 @@ export default function Form(props: Props) {
     return (
         <div className={`flex flex-col space-y-5`}>
             <Select
-                label="Your Entdity"
+                label="Your Entity"
                 data={ticketPrices.map(({entity}) => entity).sort()}
                 onChange={(value) => setSelectedEntity(value)}
                 searchable
@@ -86,7 +86,10 @@ export default function Form(props: Props) {
                 <NumberInput placeholder="0 delegates" suffix=" delegates" min={0} hideControls onChange={(value) => setNumDelegates(parseInt(value.toString()))}/>
             </Input.Wrapper>
 
-            <Button variant="gradient" gradient={{ from: '#3264cc', to: '#0d1c66', deg: 160}} fullWidth onClick={submitForm}>Calculate ROI</Button>
+            <Button
+                disabled={!selectedEntity || !revenuePerApproval || !numDelegates}
+                className={`transition-all duration-300`}
+                variant="gradient" gradient={{ from: '#3264cc', to: '#0d1c66', deg: 160}} fullWidth onClick={submitForm}>Calculate ROI</Button>
         </div>
     );
 }

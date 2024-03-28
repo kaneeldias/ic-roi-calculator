@@ -6,7 +6,7 @@ interface Props {
 export default function CalculationRow(props: Props) {
     return (
         <div className={`flex flex-row space-x-5 items-center`}>
-            <div className={`w-96`}>
+            <div className={`text-xs w-full md:text-sm md:w-96`}>
                 {props.description}
             </div>
 
