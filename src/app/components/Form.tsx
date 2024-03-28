@@ -68,10 +68,14 @@ export default function Form(props: Props) {
     return (
         <div className={`flex flex-col space-y-5`}>
             <Select
-                label="Your Entity"
+                label="Your Entdity"
                 data={ticketPrices.map(({entity}) => entity).sort()}
                 onChange={(value) => setSelectedEntity(value)}
                 searchable
+                comboboxProps={{ transitionProps: { transition: 'fade-down', duration: 200 } }}
+                styles={{
+                    option: {color: 'black'},
+                }}
             />
 
             <Input.Wrapper label="Revenue per approval (USD)" description="Approximately how much do you make per approval?">
